@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import MemberTable from './MemberTable';
 
 function App() {
+  const [selectedRole, setSelectedRole] = useState(null);
+
+  const handleRoleChange = (event) => {
+    setSelectedRole(event.target.value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Member Management</h1>
+      <label htmlFor="role">Select Role:</label>
+      <select id="role" value={selectedRole} onChange={handleRoleChange}>
+        <option value="">All</option>
+        <option value="ADMIN">Admin</option>
+        <option value="PENDING">Pending</option>
+        <option value="VERIFIED">Verified</option>
+        <option value="DENIED">Denied</option>
+      </select>
+      <MemberTable role={selectedRole} />
     </div>
   );
 }
