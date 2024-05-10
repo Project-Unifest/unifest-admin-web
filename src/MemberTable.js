@@ -7,6 +7,7 @@ function MemberTable({ role }) {
   const [members, setMembers] = useState([]);
   const [selectedMembers, setSelectedMembers] = useState([]);
   const [newRole, setNewRole] = useState('');
+  const [loading, setLoading] = useState(true); // 멤버들을 불러오는 중인지 여부
 
   useEffect(() => {
     async function fetchMembers() {
@@ -15,6 +16,7 @@ function MemberTable({ role }) {
           params: { role: role }
         });
         setMembers(response.data.data);
+        setLoading(false); // 멤버들을 모두 불러왔음을 표시
       } catch (error) {
         console.error('Error fetching members:', error);
       }
@@ -56,6 +58,14 @@ function MemberTable({ role }) {
       console.error('Error updating role:', error);
     }
   };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (members.length === 0) {
+    return <div>No members to show</div>;
+  }
 
   return (
     <div>
