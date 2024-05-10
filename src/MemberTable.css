@@ -1,0 +1,15 @@
+.member-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .member-table th, .member-table td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .member-table th {
+    font-weight: bold;
+  }
+  

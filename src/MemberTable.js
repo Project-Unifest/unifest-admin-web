@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-let BaseURL = 'http://ec2-43-200-72-31.ap-northeast-2.compute.amazonaws.com:9090';
+import './MemberTable.css';
+const BaseURL = 'http://ec2-43-200-72-31.ap-northeast-2.compute.amazonaws.com:9090';
 
 function MemberTable({ role }) {
   const [members, setMembers] = useState([]);
   const [selectedMembers, setSelectedMembers] = useState([]);
   const [newRole, setNewRole] = useState('');
-  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
-  const [showErrorPopup, setShowErrorPopup] = useState(false);
 
   useEffect(() => {
     async function fetchMembers() {
@@ -36,15 +35,25 @@ function MemberTable({ role }) {
   };
 
   const handleSubmit = async () => {
+    if (selectedMembers.length === 0 || newRole === '') {
+      alert('Please select members and role');
+      return;
+    }
+
+    for (const memberId of selectedMembers) {
+      await patchMember(memberId, newRole);
+    }
+    window.location.reload();
+  };
+
+  const patchMember = async (memberId, role) => {
     try {
-      const response = await axios.patch(`${BaseURL}/members`, null, {
-        params: { members: selectedMembers, role: newRole }
+      const response = await axios.patch(`${BaseURL}/members/${memberId}`, null, {
+        params: { role: role }
       });
       console.log('Role updated:', response.data);
-      setShowSuccessPopup(true);
     } catch (error) {
       console.error('Error updating role:', error);
-      setShowErrorPopup(true);
     }
   };
 
@@ -79,16 +88,13 @@ function MemberTable({ role }) {
       </table>
       <div>
         <select onChange={handleRoleChange}>
-          <option value="">Select Role</option>
+          <option value="">Select Role To Change</option>
           <option value="DENIED">Denied</option>
           <option value="PENDING">Pending</option>
-          <option value="ADMIN">Admin</option>
           <option value="VERIFIED">Verified</option>
         </select>
         <button onClick={handleSubmit}>Submit</button>
       </div>
-      {showSuccessPopup && <div>Success Popup</div>}
-      {showErrorPopup && <div>Error Popup</div>}
     </div>
   );
 }
