@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-const BaseURL = 'http://ec2-43-200-72-31.ap-northeast-2.compute.amazonaws.com:9090';
 
 function Login({ setTokens }) {
   const [email, setEmail] = useState('');
@@ -17,7 +16,7 @@ function Login({ setTokens }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(`${BaseURL}/login`, {
+      const response = await axios.post(`/login`, {
         email: email,
         password: password
       });

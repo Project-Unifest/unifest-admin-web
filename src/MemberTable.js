@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './MemberTable.css';
-const BaseURL = 'http://ec2-43-200-72-31.ap-northeast-2.compute.amazonaws.com:9090';
 
 function MemberTable({ role }) {
   const [members, setMembers] = useState([]);
@@ -12,7 +11,7 @@ function MemberTable({ role }) {
   useEffect(() => {
     async function fetchMembers() {
       try {
-        const response = await axios.get(`${BaseURL}/members`, {
+        const response = await axios.get(`/members`, {
           params: { role: role }
         });
         setMembers(response.data.data);
@@ -50,7 +49,7 @@ function MemberTable({ role }) {
 
   const patchMember = async (memberId, role) => {
     try {
-      const response = await axios.patch(`${BaseURL}/members/${memberId}`, null, {
+      const response = await axios.patch(`/members/${memberId}`, null, {
         params: { role: role }
       });
       console.log('Role updated:', response.data);
