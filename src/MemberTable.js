@@ -90,7 +90,9 @@ function MemberTable({ role }) {
               <td>{member.phoneNum}</td>
               <td>{member.memberRole}</td>
               <td>
+                { member.memberRole !== 'ADMIN' ?
                 <input type="checkbox" onChange={(e) => handleCheckboxChange(e, member.id)} />
+              : <input type="checkbox" disabled />}
               </td>
             </tr>
           ))}
