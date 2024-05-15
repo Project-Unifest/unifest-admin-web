@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Login from './Login'; // 로그인 컴포넌트를 가져옵니다.
 import MemberManagement from './MemberManagement';
+import Logout from './Logout'; // 로그아웃 컴포넌트를 가져옵니다.
 import axios from 'axios';
+axios.defaults.baseURL = process.env.REACT_APP_API_ROOT;
 
 function App() {
   const [accessToken, setAccessToken] = useState(null);
@@ -17,25 +19,23 @@ function App() {
     axios.defaults.headers.common['Authorization'] = accessToken;
   }, [accessToken]); // accessToken이 변경될 때마다 실행되도록 설정
   
-//   // refreshToken을 받은 후 쿠키에 저장하는 코드
-//   const setRefreshTokenCookie = (refreshToken) => {
-//   const cookieOptions = {
-//     path: '/', // 모든 경로에서 접근 가능하도록 설정
-//     httpOnly: true, // JavaScript에서 쿠키에 접근 불가능하도록 설정
-//     secure: true, // HTTPS에서만 쿠키를 전송하도록 설정
-//     sameSite: 'strict' // CSRF 공격 방지를 위해 SameSite 설정
-//   };
-
-//   document.cookie = `refreshToken=${refreshToken}; ${Object.entries(cookieOptions).map(([key, value]) => `${key}=${value}`).join('; ')}`;
-// };
-// useEffect(() => {
-//   setRefreshTokenCookie(refreshToken);
-// }, [refreshToken]);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+  // 로그아웃 처리 함수
+  const handleLogout = () => {
+    // 로컬 스토리지에서 토큰 제거
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    // 상태 업데이트로 컴포넌트 다시 렌더링
+    setAccessToken(null);
+    setRefreshToken(null);
+  };
 
   return (
     <div>
       {accessToken ? (
-        <MemberManagement/>
+        <div>
+          <Logout onLogout={handleLogout} />
+          <MemberManagement/>
+        </div>
       ) : (
         <Login setTokens = {
           (accessToken, refreshToken) => {
