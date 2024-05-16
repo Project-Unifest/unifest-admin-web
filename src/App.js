@@ -11,8 +11,6 @@ function App() {
   useEffect(() => { 
     setAccessToken(localStorage.getItem('accessToken'));
     setRefreshToken(localStorage.getItem('refreshToken'));
-    console.log('accessToken:', accessToken);
-    console.log('refreshToken:', refreshToken);
   }, []); // 최초 렌더링 시에만 실행되도록 빈 배열을 전달
   
   useEffect(() => {
