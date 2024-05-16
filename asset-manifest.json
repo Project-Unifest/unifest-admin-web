@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/unifest-admin-web/static/css/main.bfa15890.css",
-    "main.js": "/unifest-admin-web/static/js/main.27378466.js",
-    "static/js/453.bdc3282b.chunk.js": "/unifest-admin-web/static/js/453.bdc3282b.chunk.js",
+    "main.js": "/unifest-admin-web/static/js/main.7c228369.js",
+    "static/js/453.d4a5d534.chunk.js": "/unifest-admin-web/static/js/453.d4a5d534.chunk.js",
     "index.html": "/unifest-admin-web/index.html",
     "main.bfa15890.css.map": "/unifest-admin-web/static/css/main.bfa15890.css.map",
-    "main.27378466.js.map": "/unifest-admin-web/static/js/main.27378466.js.map",
-    "453.bdc3282b.chunk.js.map": "/unifest-admin-web/static/js/453.bdc3282b.chunk.js.map"
+    "main.7c228369.js.map": "/unifest-admin-web/static/js/main.7c228369.js.map",
+    "453.d4a5d534.chunk.js.map": "/unifest-admin-web/static/js/453.d4a5d534.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bfa15890.css",
-    "static/js/main.27378466.js"
+    "static/js/main.7c228369.js"
   ]
 }
