@@ -24,4 +24,4 @@ yarn-error.log*
 
 #Added
 node_modules
-package-lock.json
+package.json
