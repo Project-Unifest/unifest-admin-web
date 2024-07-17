@@ -1,9 +1,9 @@
 import Logo from "../assets/logo.svg"
-
+import styles from "../components/LogoBar.style.css"
 
 function Header(){
     return(
-        <div>
+        <div className="HeaderDiv">
             <img src={Logo}></img>
         </div>
     )
