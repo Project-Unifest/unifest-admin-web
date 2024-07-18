@@ -59,7 +59,9 @@ function MemberTable({ role }) {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>
+      <img></img>
+    </div>;
   }
 
   if (members.length === 0) {

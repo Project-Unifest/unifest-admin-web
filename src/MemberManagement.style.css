@@ -1,0 +1,118 @@
+.roleBar{
+    margin: 0px 131px 0px 131px;
+    display: flex;
+    flex-direction: row;
+}
+
+.roleDiv{
+    border-radius: 10px;
+    background: #EBEBEB;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 20px 0px 0px;
+    padding: 16px;
+    flex-wrap: nowrap;
+    width: 20%;
+    align-content: center;
+
+    color: #555;
+    font-family: "Noto Sans KR";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.roleLeftDiv{
+    float: right;
+    display: flex;
+    align-items: center;
+}
+.roleRightDiv1{
+    float: left;
+    border-radius: 10px;
+    background: #F5687E;
+    padding: 6px 11px 6px 11px;
+
+    color: #FFF;
+    font-family: "Noto Sans KR";
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+}
+.roleRightDiv2{
+    float: left;
+    border-radius: 10px;
+    background: #9C9C9C;
+    padding: 6px 11px 6px 11px;
+
+    color: #FFF;
+    font-family: "Noto Sans KR";
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+}
+.roleRightDiv3{
+    float: left;
+    border-radius: 10px;
+    background: #15D055;
+    padding: 6px 11px 6px 11px;
+
+    color: #FFF;
+    font-family: "Noto Sans KR";
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+}
+.roleRightDiv4{
+    float: left;
+    border-radius: 10px;
+    background: #FF5252;
+    padding: 6px 11px 6px 11px;
+
+    color: #FFF;
+    font-family: "Noto Sans KR";
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+}
+
+.selectDiv{
+    margin: 50px 0px 0px 131px;
+}
+
+.filterLabel{
+    margin: 0px 14px 0px 0px;
+    color: #555;
+    font-family: "Noto Sans KR";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;    
+}
+
+.filterSelect{
+    border-radius: 8px;
+    border: 2px solid #AEAEAE;
+    color: var(--Black, #000);
+
+    /* Body */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */    
+}
