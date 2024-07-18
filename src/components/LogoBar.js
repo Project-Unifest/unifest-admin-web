@@ -1,5 +1,5 @@
 import Logo from "../assets/logo.svg"
-import styles from "../components/LogoBar.style.css"
+import "../components/LogoBar.style.css"
 
 function Header(){
     return(

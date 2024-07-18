@@ -26,30 +26,25 @@ function App() {
     setAccessToken(null);
     setRefreshToken(null);
   };
-  return(
+  return (
     <div>
-      
+      {accessToken ? (
+        <div>
+          <Logout onLogout={handleLogout} />
+          <MemberManagement/>
+        </div>
+      ) : (
+        <Login setTokens = {
+          (accessToken, refreshToken) => {
+            setAccessToken(accessToken);
+            setRefreshToken(refreshToken);
+            localStorage.setItem('accessToken', accessToken);
+            localStorage.setItem('refreshToken', refreshToken);
+          }
+        } />
+      )}
     </div>
-  )
-  // return (
-  //   <div>
-  //     {accessToken ? (
-  //       <div>
-  //         <Logout onLogout={handleLogout} />
-  //         <MemberManagement/>
-  //       </div>
-  //     ) : (
-  //       <Login setTokens = {
-  //         (accessToken, refreshToken) => {
-  //           setAccessToken(accessToken);
-  //           setRefreshToken(refreshToken);
-  //           localStorage.setItem('accessToken', accessToken);
-  //           localStorage.setItem('refreshToken', refreshToken);
-  //         }
-  //       } />
-  //     )}
-  //   </div>
-  // );
+  );
 }
 
 export default App;
