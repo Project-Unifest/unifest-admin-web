@@ -1,4 +1,4 @@
-import "./MemberComponent.css"
+import "./MemberComponent.style.css"
 
 function MemberComponent({id, email, phoneNum}){
     return(

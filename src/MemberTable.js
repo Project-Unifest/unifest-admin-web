@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { CircularProgress } from '@mui/material';
-import './MemberTable.css';
+import './MemberTable.style.css';
 import tempDB from './tempDB.json'
 import MemberComponent from './MemberComponent';
 
