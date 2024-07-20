@@ -26,3 +26,4 @@ yarn-error.log*
 node_modules
 package.json
 package.json
+src/tempDB.json
