@@ -1,21 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { CircularProgress } from '@mui/material';
 import './MemberTable.css';
+import tempDB from './tempDB.json'
+import MemberComponent from './MemberComponent';
 
-function MemberTable({ role }) {
+function MemberTable({ role , setter, loading}) {
   const [members, setMembers] = useState([]);
+  //const [members, setMembers] = useState([]);
   const [selectedMembers, setSelectedMembers] = useState([]);
   const [newRole, setNewRole] = useState('');
-  const [loading, setLoading] = useState(true); // 멤버들을 불러오는 중인지 여부
+  
 
   useEffect(() => {
     async function fetchMembers() {
       try {
-        const response = await axios.get(`/members`, {
-          params: { role: role }
-        });
-        setMembers(response.data.data);
-        setLoading(false); // 멤버들을 모두 불러왔음을 표시
+        // const response = await axios.get(`/members`, {
+        //   params: { role: role }
+        // });
+        await new Promise(r => setTimeout(r, 1000));
+        setMembers([tempDB.data[0],tempDB.data[1]])
+        // for (let i=0; i<tempDB.data.length; i++){
+        //   setMembers([...members, tempDB.data[i]]);          
+        // }
+
+        
+        //setMembers(response.data.data);
+        setter(false)
+        
+       // setLoading(false); // 멤버들을 모두 불러왔음을 표시
       } catch (error) {
         console.error('Error fetching members:', error);
       }
@@ -59,8 +72,8 @@ function MemberTable({ role }) {
   };
 
   if (loading) {
-    return <div>
-      <img></img>
+    return <div style={{ flex:'1',  display: "flex", justifyContent: "center", alignContent:"center"}}>
+      <CircularProgress color="inherit" size={120} />
     </div>;
   }
 
@@ -68,9 +81,13 @@ function MemberTable({ role }) {
     return <div>No members to show</div>;
   }
 
+
   return (
     <div>
-      <h2>Members</h2>
+      {members.map((value, index)=>{
+        return <MemberComponent id={value.id} email={value.email} phoneNum={value.phoneNum}/>
+      })}
+      {/* <h2>Members</h2>
       <table>
         <thead>
           <tr>
@@ -107,7 +124,7 @@ function MemberTable({ role }) {
           <option value="VERIFIED">Verified</option>
         </select>
         <button onClick={handleSubmit}>Submit</button>
-      </div>
+      </div> */}
     </div>
   );
 }

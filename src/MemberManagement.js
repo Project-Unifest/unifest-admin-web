@@ -5,6 +5,7 @@ import './MemberManagement.style.css'
 
 function MemberManagement() {
   const [selectedRole, setSelectedRole] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const handleRoleChange = (event) => {
     setSelectedRole(event.target.value);
@@ -60,24 +61,10 @@ function MemberManagement() {
           <option value="VERIFIED">Verified</option>
           <option value="DENIED">Denied</option>
         </select>
-        <MemberTable role={selectedRole} />
+        <MemberTable role={selectedRole} setter={setLoading} loading = {loading} />
       </div>
     </div>
   )
-  // return (
-  //   <div>
-  //     <h1>Member Management</h1>
-  //     <label htmlFor="role">Select Role:</label>
-      // <select id="role" value={selectedRole} onChange={handleRoleChange}>
-      //   <option value="">All</option>
-      //   <option value="ADMIN">Admin</option>
-      //   <option value="PENDING">Pending</option>
-      //   <option value="VERIFIED">Verified</option>
-      //   <option value="DENIED">Denied</option>
-      // </select>
-  //     <MemberTable role={selectedRole} />
-  //   </div>
-  // );
 }
 
 export default MemberManagement;
