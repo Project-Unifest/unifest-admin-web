@@ -1,11 +1,17 @@
 import "./MemberComponent.style.css"
 
-function MemberComponent({id, email, phoneNum}){
+function MemberComponent({id, email, phoneNum, bgColor,setPage, hrEnable}){
     return(
         <div>
             <div style={{display:"flex", justifyContent:"center", flexDirection:"column"}}>
-                <div><hr style={{}}/></div>
-                <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
+                <div>
+                    {hrEnable ? 
+                    (<hr style={{}}/>)
+                    :
+                    (<div/>)
+                    }                  
+                </div>
+                <div onClick={(e)=>setPage(e, id, email, phoneNum)} style={{display:"flex", justifyContent:"space-between", alignItems:"center", background:{bgColor}, borderRadius:"10px"}}>
                     <div>
                         <div className="uidLabel">
                             UID

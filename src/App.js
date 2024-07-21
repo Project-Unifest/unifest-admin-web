@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import Login from './Login'; // 로그인 컴포넌트를 가져옵니다.
-import MemberManagement from './MemberManagement';
 import Logout from './Logout'; // 로그아웃 컴포넌트를 가져옵니다.
+import Header from './components/LogoBar'
+
 import axios from 'axios';
+
+import MemberManagement from "./MemberManagement";
+
+
 axios.defaults.baseURL = process.env.REACT_APP_API_ROOT;
 
 function App() {
   const [accessToken, setAccessToken] = useState(null);
   const [refreshToken, setRefreshToken] = useState(null);
+
   useEffect(() => { 
     setAccessToken(localStorage.getItem('accessToken'));
     setRefreshToken(localStorage.getItem('refreshToken'));
@@ -27,10 +33,10 @@ function App() {
     setRefreshToken(null);
   };
   return (
-    <div>
+    <div style={{height:'100%'}}>
       {accessToken ? (
         <div>
-          <Logout onLogout={handleLogout} />
+          <Header onLogout={handleLogout} /> 
           <MemberManagement/>
         </div>
       ) : (

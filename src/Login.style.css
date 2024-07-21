@@ -3,7 +3,8 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-
+    align-items:'center';
+    height: 100%;
     margin : 53px 0px 0px 0px;
 }
 
@@ -56,6 +57,7 @@
 
 .LoginForm{
     width: 504px;
+    
 }
 input[type="checkbox"] {
     margin: 0px 8px 0px 1px

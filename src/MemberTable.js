@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { CircularProgress } from '@mui/material';
+import { CircularProgress, colors } from '@mui/material';
 import './MemberTable.style.css';
 import tempDB from './tempDB.json'
 import MemberComponent from './MemberComponent';
 
-function MemberTable({ role , setter, loading}) {
+function MemberTable({ role , setter, loading, setPage}) {
   const [members, setMembers] = useState([]);
   //const [members, setMembers] = useState([]);
   const [selectedMembers, setSelectedMembers] = useState([]);
@@ -85,7 +85,7 @@ function MemberTable({ role , setter, loading}) {
   return (
     <div>
       {members.map((value, index)=>{
-        return <MemberComponent id={value.id} email={value.email} phoneNum={value.phoneNum}/>
+        return <MemberComponent id={value.id} email={value.email} phoneNum={value.phoneNum} bgColor={"#fff"} setPage={setPage} hrEnable={true}/>
       })}
       {/* <h2>Members</h2>
       <table>

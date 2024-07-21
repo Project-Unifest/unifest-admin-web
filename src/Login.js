@@ -29,7 +29,7 @@ function Login({ setTokens }) {
   };
 
   return (
-    <div style={{display:'flex',justifyContent:'center'}}>
+    <div style={{display:'flex',justifyContent:'center', height:'100%'}}>
     <div className='LoginDiv' style={{width:'580px'}}>
       <div className='LoginTitleDiv'>유니페스 총학생회 관리페이지</div>
       <div className='LoginBoldDiv'>로그인</div> 
