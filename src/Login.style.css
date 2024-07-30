@@ -1,93 +1,90 @@
-.LoginDiv{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    align-items:'center';
-    height: 100%;
-    margin : 53px 0px 0px 0px;
+.LoginDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: "center";
+  height: 100%;
 }
 
-.LoginTitleDiv{
-    color: #464646;
-    text-align: center;
-    font-family: "Noto Sans KR";
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+.LoginTitleDiv {
+  color: #464646;
+  text-align: center;
+  font-family: "Noto Sans KR";
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
-.LoginBoldDiv{
-    color: #000;
-    text-align: center;
-    font-family: "Noto Sans KR";
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
+.LoginBoldDiv {
+  color: #000;
+  text-align: center;
+  font-family: "Noto Sans KR";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
 
-    margin-bottom:53px;
+  margin-bottom: 53px;
 }
 
-.LoginForm{
-    display: inline-block;
+.LoginForm {
+  display: inline-block;
 }
 
-.inputIDPW{
-    padding: 20px;
-    text-align: left;
-    margin-top: 14px;
-    
-    border-radius: 10px;
-    border: 2px solid #B7B7B7;
+.inputIDPW {
+  padding: 20px;
+  text-align: left;
+  margin-top: 14px;
 
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
+  border-radius: 10px;
+  border: 2px solid #b7b7b7;
 
-    color: rgba(85, 85, 85, 0.50);
-    font-family: "Noto Sans KR";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    /* 여기 반응형 향후 수정 */
-    width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+
+  color: rgba(85, 85, 85, 0.5);
+  font-family: "Noto Sans KR";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  /* 여기 반응형 향후 수정 */
+  width: 100%;
 }
 
-.LoginForm{
-    width: 504px;
-    
+.LoginForm {
+  width: 504px;
 }
 input[type="checkbox"] {
-    margin: 0px 8px 0px 1px
+  margin: 0px 8px 0px 1px;
 }
 
-.LoginBtn{
-    width: 100%;
-    padding: 20px;
-    margin-top: 26px;
+.LoginBtn {
+  width: 100%;
+  padding: 20px;
+  margin-top: 26px;
 
-    border-radius: 10px;
-    border-color: white;
+  border-radius: 10px;
+  border-color: white;
 
-    
-    background: #9C9C9C;
+  background: #9c9c9c;
 
-    color: #FFF;
-    text-align: center;
-    font-family: "Noto Sans KR";
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+  color: #fff;
+  text-align: center;
+  font-family: "Noto Sans KR";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
-label{
-    color: #9C9C9C;
-    font-family: "Noto Sans KR";
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+label {
+  color: #9c9c9c;
+  font-family: "Noto Sans KR";
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
